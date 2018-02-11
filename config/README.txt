@@ -1,0 +1,1 @@
+config: aquí irán los ficheros de configuración de la base de datos, globales, etc

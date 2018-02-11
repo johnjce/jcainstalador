@@ -1,0 +1,1 @@
+index.php será el controlador frontal por el que pasará absolutamente todo en la aplicación.
