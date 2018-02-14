@@ -109,11 +109,19 @@
                         </div>
                         <!--end search section-->
                     </li>
-                    <li class="selected">
+                    <?php
+                        $page = $_SERVER['REQUEST_URI'];
+                        $pag=preg_split('/=/',$page);
+                        $pag = $pag[2];
+                    ?>
+                    <li <?php if($pag == "index") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","index"); ?>"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                     </li>
-                    <li>
+                    <li <?php if($pag == "usuarios") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                    </li>
+                    <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
+                        <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa camera-retro fa-fw"></i> Trabajos</a>
                     </li>
                 </ul>
                 <!-- end side-menu -->
