@@ -28,6 +28,7 @@
     <link href="./assets/back/plugins/pace/pace-theme-big-counter.css" rel="stylesheet" />
     <link href="./assets/back/css/style.css" rel="stylesheet" />
     <link href="./assets/back/css/main-style.css" rel="stylesheet" />
+
     <!-- Page-Level CSS -->
     <link href="./assets/back/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
    </head>
@@ -121,7 +122,7 @@
                         <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                     </li>
                     <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
-                        <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa camera-retro fa-fw"></i> Trabajos</a>
+                        <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i> Trabajos</a>
                     </li>
                 </ul>
                 <!-- end side-menu -->

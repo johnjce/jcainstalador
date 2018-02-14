@@ -18,5 +18,9 @@
                 "allusers"=>$allusers
             ));
         }
+
+        public function trabajos(){
+            $this->view("trabajos",array(""=>""));
+        }
     }
 ?>
