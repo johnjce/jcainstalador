@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 13-02-2018 a las 23:46:43
+-- Tiempo de generación: 14-02-2018 a las 12:39:35
 -- Versión del servidor: 10.2.8-MariaDB
 -- Versión de PHP: 5.6.31
 
@@ -21,6 +21,42 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `jca`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `categoria` varchar(15) NOT NULL,
+  `idPadre` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id`, `categoria`, `idPadre`) VALUES
+(1, 'techos', 0),
+(2, 'desmontables', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `fotos`
+--
+
+DROP TABLE IF EXISTS `fotos`;
+CREATE TABLE IF NOT EXISTS `fotos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) NOT NULL,
+  `idTrabajo` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -46,6 +82,21 @@ INSERT INTO `index_data` (`id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `trabajos`
+--
+
+DROP TABLE IF EXISTS `trabajos`;
+CREATE TABLE IF NOT EXISTS `trabajos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(20) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -61,7 +112,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `sesion` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `user` (`user`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
