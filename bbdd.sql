@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 14-02-2018 a las 12:39:35
+-- Tiempo de generación: 15-02-2018 a las 22:36:02
 -- Versión del servidor: 10.2.8-MariaDB
 -- Versión de PHP: 5.6.31
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `categoria` (
   `categoria` varchar(15) NOT NULL,
   `idPadre` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `categoria`
@@ -43,20 +43,6 @@ CREATE TABLE IF NOT EXISTS `categoria` (
 INSERT INTO `categoria` (`id`, `categoria`, `idPadre`) VALUES
 (1, 'techos', 0),
 (2, 'desmontables', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `fotos`
---
-
-DROP TABLE IF EXISTS `fotos`;
-CREATE TABLE IF NOT EXISTS `fotos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `url` varchar(255) NOT NULL,
-  `idTrabajo` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -91,8 +77,10 @@ CREATE TABLE IF NOT EXISTS `trabajos` (
   `titulo` varchar(20) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `categoria` varchar(255) NOT NULL,
+  `fotos` text NOT NULL,
+  `fecha` date NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `password`, `nombre`, `apellido`, `user`, `privilegio`, `sesion`) VALUES
-(1, 'jjcinformatik@gmail.com', '804ae3a6c563e511063fee536ac902061365fd6', 'jhon', 'castaño', 'jhonts', 2, 1);
+(5, 'jjcinformatik@gmail.com', '804ae3a6c563e511063fee536ac902061365fd12', 'jhon', 'castaño', 'jhonts', 2, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

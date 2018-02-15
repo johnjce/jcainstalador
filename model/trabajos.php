@@ -52,10 +52,11 @@
         }
 
         public function save(){
-            $query="INSERT INTO trabajos (id,titulo,descripcion,categoria)
+            $query="INSERT INTO trabajos (id,titulo,descripcion,fotos,categoria)
                     VALUES(NULL,
                            '".$this->titulo."',
                            '".$this->descripcion."',
+                           '".$this->fotos."',
                            '".$this->categoria."');";
             $this->db()->query($query);
         }
