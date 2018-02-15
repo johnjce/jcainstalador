@@ -57,12 +57,14 @@
                            '".$this->titulo."',
                            '".$this->descripcion."',
                            '".$this->categoria."');";
-            echo $this->db()->query($query);
+            $this->db()->query($query);
         }
 
         public function remove($id){
             return "Borrado correctamente";
         }
+
+
 
 
     }

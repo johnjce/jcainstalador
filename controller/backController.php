@@ -20,7 +20,11 @@
         }
 
         public function trabajos(){
-            $this->view("trabajos",array(""=>""));
+            $trabajo=new trabajos($this->adapter);
+            $allCategories=$trabajo->getAllCategories();
+            $this->view("trabajos",array(
+                "allCategories"=>$allCategories
+            ));
         }
     }
 ?>

@@ -25,15 +25,20 @@
                                 <label>Descrici&oacute;n:</label>
                                 <textarea class="form-control" rows="3" placeholder="Descripci&oacute;n" name="descripcion" ></textarea>
                                 <label>Categoria</label>
-                                <select multiple="" class="form-control" name="categoria">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <select multiple class="form-control" name="categoria[]">
+                                    <?php
+                                        foreach($allCategories as $row ){
+                                            foreach($row as $clave => $valor) {
+                                                if($clave == "id"){ $id=$valor; }
+                                                if($clave == "categoria"){ $desc=$valor; }
+                                            }
+                                            echo "<option value='$id'>$desc</option>\n";
+                                        }
+                                    ?>
                                 </select>
+
                                 <label>Fotos:</label>
-                                <input id="file" type="file" class="file" multiple=true data-preview-file-type="any" name="files"><br/>
+                                <input id="file" type="file" class="file" multiple=true  name="files[]"><br/>
 
                                 <input type="submit" value="enviar" class="btn btn-primary"/>
                             </form>

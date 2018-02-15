@@ -58,6 +58,18 @@ class EntidadBase{
         return $query;
     }
 
+    public function getAllCategories(){
+        $query=$this->db->query("SELECT * FROM categoria ORDER BY id DESC");
+        if($query->num_rows>=1){
+            while ($row = $query->fetch_object()) {
+               $resultSet[]=$row;
+            }
+        }else{
+            return 0;
+        }
+
+        return $resultSet;
+    }
 
     /*
      * Aqui podemos montarnos un monton de métodos que nos ayuden
