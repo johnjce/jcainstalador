@@ -121,9 +121,19 @@
                     <li <?php if($pag == "usuarios") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                     </li>
-                    <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
-                        <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i> Trabajos</a>
+                    <li>
+                        <a href=""><i class="fa fa-certificate fa-fw"></i>Nuevo<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
+                                <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i>Trabajo</a>
+                            </li>
+                            <li <?php if($pag == "categorias") echo "class='selected'"; ?>>
+                                <a href="<?php echo $helper->url("back","categorias"); ?>"><i class="fa fa-code-fork fa-fw"></i>Categoria</a>
+                            </li>
+                        </ul>
                     </li>
+
+
                 </ul>
                 <!-- end side-menu -->
             </div>
