@@ -59,7 +59,7 @@ class EntidadBase{
     }
 
     public function getAllCategories(){
-        $query=$this->db->query("SELECT * FROM categoria ORDER BY id DESC");
+        $query=$this->db->query("SELECT * FROM categoria ORDER BY id, idPadre DESC");
         if($query->num_rows>=1){
             while ($row = $query->fetch_object()) {
                $resultSet[]=$row;

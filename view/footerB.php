@@ -12,6 +12,13 @@
     <!-- Page-Level Plugin Scripts-->
     <script src="./assets/back/plugins/morris/raphael-2.1.0.min.js"></script>
     <script src="./assets/back/plugins/morris/morris.js"></script>
+    <script src="./assets/back/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="./assets/back/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#trabajos').dataTable();
+        });
+    </script>
     <script src="./assets/back/scripts/dashboard-demo.js"></script>
 
 </body>

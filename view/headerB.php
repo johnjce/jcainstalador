@@ -31,6 +31,8 @@
 
     <!-- Page-Level CSS -->
     <link href="./assets/back/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
+
+    <link href="./assets/back/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
    </head>
 <body>
     <!--  wrapper -->
