@@ -67,7 +67,7 @@
                                 <thead>
                                     <tr>
                                         <th>T&iacute;tulo</th>
-                                        <th>Decripci&oacute;n</th>
+                                        <th>Descripci&oacute;n</th>
                                         <th>Categor&iacute;as</th>
                                         <th>Acci&oacute;n</th>
                                     </tr>
