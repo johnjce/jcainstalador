@@ -51,8 +51,6 @@
 		<div class="wrap-pagetop">
 			<div class="shareicons">
 				<ul>
-					<li><a href="#"><img src="./assets/front/images/rss-icon.png" title="RSS"/></a></li>
-					<li><a href="#"><img src="./assets/front/images/digg-icon.png" title="Digg"/></a></li>
 					<li><a href="#"><img src="./assets/front/images/facebook-icon.png" title="Facebook"/></a></li>
 					<li><a href="#"><img src="./assets/front/images/google-icon.png" title="Google+"/></a></li>
 					<li><a href="#"><img src="./assets/front/images/twitter-icon.png" title="Twitter"/></a></li>

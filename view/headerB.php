@@ -30,11 +30,17 @@
     <link href="./assets/back/css/main-style.css" rel="stylesheet" />
 
     <!-- Page-Level CSS -->
-    <link href="./assets/back/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
 
     <link href="./assets/back/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
    </head>
 <body>
+        <!-- Core Scripts - Include with every page -->
+    <script src="./assets/back/plugins/jquery-1.10.2.js"></script>
+    <script src="./assets/back/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/back/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="./assets/back/plugins/pace/pace.js"></script>
+    <script src="./assets/back/scripts/siminta.js"></script>
+
     <!--  wrapper -->
     <div id="wrapper">
         <!-- navbar top -->
@@ -61,11 +67,6 @@
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i>Configuraci&oacute;n</a>
-                        </li>
-                        <li class="divider"></li>
                         <li><a href="<?php echo $helper->url("login","logout"); ?>"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
                         </li>
                     </ul>
@@ -99,18 +100,6 @@
                             </div>
                         </div>
                         <!--end user image section-->
-                    </li>
-                    <li class="sidebar-search">
-                        <!-- search section-->
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Buscar...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                        <!--end search section-->
                     </li>
                     <?php
                         $page = $_SERVER['REQUEST_URI'];
