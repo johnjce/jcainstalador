@@ -11,17 +11,13 @@ class IndexController extends ControladorBase{
     }
 
     public function index(){
-
-        //Creamos el objeto datos
         $datos=new Index($this->adapter);
-
-        //Conseguimos todos los datos de la pagína
         $allData=$datos->getAll();
-
-        //Cargamos la vista index y le pasamos valores
         $this->view("index",array(
             "datos"=>$allData
         ));
     }
+
+
 }
 ?>

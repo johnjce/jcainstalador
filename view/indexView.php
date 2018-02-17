@@ -58,20 +58,15 @@
 					<li><a href="#"><img src="./assets/front/images/linkedin-icon.png" title="Linkedin"/></a></li>
 				</ul>
 			</div>
-			<div id="search">
-				<div class="button-search"></div>
-				<input type="text" value="Buscar..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Buscar...&#39;;}">
-			</div>
 		</div>
 	</div>
 	<div class="wrap-header">
 		<div id="logo"><a href="#"><img src="./assets/front/images/logo.png"/></a></div>
 		<nav>
 			<ul>
-				<li class="current"><a href="index.php">Home</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="single.html">About</a></li>
-				<li><a href="single.html">Contact</a></li>
+				<li class="current"><a href="<?php echo $helper->url("index","index"); ?>">Inicio</a></li>
+				<li><a href="<?php echo $helper->url("index","trabajos"); ?>">Trabajos</a></li>
+				<li><a href="<?php echo $helper->url("index","contacto"); ?>">Contacto</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -81,151 +76,29 @@
 <section id="content">
 	<div class="feature">
 		<div class="camera_wrap camera_azure_skin" id="camera_wrap">
-            <div data-thumb="./assets/front/images/slides/thumbs/1.jpg" data-src="./assets/front/images/slides/slide1.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>
-            <div data-thumb="./assets/front/images/slides/thumbs/2.jpg" data-src="./assets/front/images/slides/slide2.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    It uses a light version of jQuery mobile, <em>navigate the slides by swiping with your fingers</em>
-                </div>
-            </div>
-            <div data-thumb="./assets/front/images/slides/thumbs/3.jpg" data-src="./assets/front/images/slides/slide3.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-			<div data-thumb="./assets/front/images/slides/thumbs/4.jpg" data-src="./assets/front/images/slides/slide4.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-			<div data-thumb="./assets/front/images/slides/thumbs/5.jpg" data-src="./assets/front/images/slides/slide5.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-			<div data-thumb="./assets/front/images/slides/thumbs/6.jpg" data-src="./assets/front/images/slides/slide6.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-			<div data-thumb="./assets/front/images/slides/thumbs/7.jpg" data-src="./assets/front/images/slides/slide7.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-			<div data-thumb="./assets/front/images/slides/thumbs/8.jpg" data-src="./assets/front/images/slides/slide8.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
-            <div data-thumb="./assets/front/images/slides/thumbs/9.jpg" data-src="./assets/front/images/slides/slide9.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    <em>It's completely free</em> (even if a donation is appreciated)
-                </div>
-            </div>
+            <?php
+                $fotos = new index($this->adapter);
+                echo $fotos->listar_carpetas("fotos")."\n";
+            ?>
         </div>
 		<div style="clear:both; display:block; height:10px"></div>
 	</div>
-	<div class="welcome">
-		<p><?php print_r($datos); ?></p>
+    <div class="welcome">
+		<p>Actualmente y cubriendo las necesidades de instalaciones de pladur en la isla de Lanzarote, <a href="https://johnjce.github.io/inicio/" target="_blank" style="color: #DA251D;">JCA instaladores</a> nace como una nueva alternativa con muchos años de experiencia en el sector. <br/>Actualmente contamos con un equipo de profecionales altamente cualificados para realizar todos sus proyectos en el menor tiempo posible, con la mejor calidad y con la garatia que quedara satifecho con el resultado, estamos disponibles a travez de los telefonos.<br/>+34 616 236 722 <br/> +34 689 366 343.</p>
 	</div>
-	<div class="zerogrid">
-		<div class="row block01">
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/1.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/2.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/3.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/4.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/5.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/6.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/7.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/8.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-			<div class="col-1-3">
-				<article>
-					<a href="blog.html"><img src="./assets/front/images/slides/thumbs/9.jpg" class="grayscale"/><h2>Sed accumsan libero</h2></a>
-				</article>
-			</div>
-		</div>
-	</div>
+    <div style="clear:both; display:block; height:10px"></div>
+
+
+
+
 </section>
+
 <!--------------Footer--------------->
 <footer>
 	<div class="zerogrid">
-		<div class="row block02">
-			<section class="col-1-3">
-				<div class="heading"><h2>About us</h2></div>
-				<div class="content">
-					<p>Free Html5 Templates created by <a href="https://johnjce.github.io/inicio/" target="_blank" style="color: #DA251D;">ZEROTHEME</a>. You can use and modify the template for both personal and commercial use. You must keep all copyright information and credit links in the template and associated files.</p>
-				</div>
-			</section>
-			<section class="col-1-3">
-				<div class="heading"><h2>Categories</h2></div>
-				<div class="content">
-					<ul>
-						<li><a href="https://johnjce.github.io/inicio/">Free Html5 Templates</a></li>
-						<li><a href="https://johnjce.github.io/inicio/">Free Responsive Themes</a></li>
-						<li><a href="https://johnjce.github.io/inicio/">Free Html5 and Css3 Themes</a></li>
-					</ul>
-				</div>
-			</section>
-			<section class="col-1-3">
-				<div class="heading"><h2>Popular Post</h2></div>
-				<div class="content">
-					<div class="post">
-						<img src="./assets/front/images/slides/slide6.jpg"/>
-						<h4><a href="blog.html">Lorem ipsum dolor sit amet</a></h4>
-						<p>November 11 ,2012</p>
-					</div>
-					<div class="post">
-						<img src="./assets/front/images/slides/slide7.jpg"/>
-						<h4><a href="blog.html">Lorem ipsum dolor sit amet</a></h4>
-						<p>November 11 ,2012</p>
-					</div>
-					<div class="post">
-						<img src="./assets/front/images/slides/slide9.jpg"/>
-						<h4><a href="blog.html">Lorem ipsum dolor sit amet</a></h4>
-						<p>November 11 ,2012</p>
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
-	<div class="copyright">
-		<p>Copyright © 2012 - Designed by <a href="https://johnjce.github.io/inicio/">..::jhonts::..</a></p>
-	</div>
+        <div class="copyright">
+            <p>Copyright © 2012 - Designed by <a href="https://johnjce.github.io/inicio/">..::jhonts::..</a></p>
+        </div>
+    </div>
 </footer>
 </body></html>
