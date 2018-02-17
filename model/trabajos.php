@@ -60,13 +60,5 @@
                            '".$this->categoria."');";
             $this->db()->query($query);
         }
-
-        public function remove($id){
-            return "Borrado correctamente";
-        }
-
-
-
-
     }
 ?>

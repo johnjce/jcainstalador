@@ -1,3 +1,4 @@
+
 <?php
 class trabajosModel extends ModeloBase{
     private $table;
@@ -9,5 +10,9 @@ class trabajosModel extends ModeloBase{
 
     //Métodos de consulta
 
+    public function getAllJobs(){
+        $query=$this->ejecutarSql("SELECT * FROM trabajos ORDER BY id DESC");
+        return $query;
+    }
 }
 ?>

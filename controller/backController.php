@@ -14,17 +14,17 @@
         public function usuarios(){
             $usuario=new Usuario($this->adapter);
             $allusers=$usuario->getAll();
-            $this->view("usuarios",array(
-                "allusers"=>$allusers
-            ));
+            $this->redirect("usuarios", "index");
         }
 
         public function trabajos(){
             $trabajo=new trabajos($this->adapter);
-            $allCategories=$trabajo->getAllCategories();
-            $this->view("trabajos",array(
-                "allCategories"=>$allCategories
-            ));
+            $this->redirect("trabajos", "index");
+        }
+
+        public function categorias(){
+            $trabajo=new categoria($this->adapter);
+            $this->redirect("categorias", "index");
         }
     }
 ?>

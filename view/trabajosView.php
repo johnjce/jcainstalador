@@ -28,13 +28,8 @@
                     <select multiple class="form-control" name="categoria[]">
                         <?php
                             foreach($allCategories as $row ){
-                                foreach($row as $clave => $valor) {
-                                    if($clave == "id"){ $id=$valor; }
-                                    if($clave == "categoria"){ $desc=$valor; }
-                                    if($clave == "idPadre"){ $padre=$valor; }
-                                }
-                                if($padre!=0) $etiq="->"; else $etiq ="";
-                                echo "<option value='$id'>$etiq $desc</option>\n";
+                                if($row->idPadre!=0) $etiq="->"; else $etiq ="";
+                                echo "<option value='$row->id:$row->categoria'>$etiq $row->categoria</option>\n";
                             }
                         ?>
                     </select>
@@ -59,7 +54,7 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         Advanced Tables
+                         Trabajos realizados
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -73,24 +68,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                    </tr>
+                                    <?php
+                                        foreach($allJobs as $valor ){
+                                           echo "<tr>
+                                                  <td>".$valor->titulo."</td>
+                                                  <td>".$valor->descripcion."</td>
+                                                  <td>";
+                                            $cat = json_decode($valor->categoria);
+                                            foreach ($cat as $clave => $name) {
+                                                echo $name.". ";
+                                            }
+                                            echo ' </td>
+                                                   <td>
+                                                    <a href="'.$helper->url("trabajos","borrar").'&id='.$valor->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
+                                                   </td>
+                                                  </tr>';
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>

@@ -13,7 +13,10 @@ class trabajosController extends ControladorBase{
     public function index(){
         $trabajo=new trabajos($this->adapter);
         $allCategories=$trabajo->getAllCategories();
+        $trabajos = new trabajosModel($this->adapter);
+        $alljobs=$trabajos->getAllJobs();
         $this->view("trabajos",array(
+            "allJobs"=>$alljobs,
             "allCategories"=>$allCategories
         ));
     }
@@ -27,7 +30,9 @@ class trabajosController extends ControladorBase{
             if(isset($_POST['categoria'])){
                 $cat="{";
                 foreach($_POST['categoria'] as $id){
-                    $cat.='"'.$i.'":"'.$id.'",';
+                    $cat.='"';
+                    $cat.=str_replace(":", '":"', $id);
+                    $cat.='",';
                     $i++;
                 }
                 $cat = substr($cat, 0, -1)."}";
@@ -36,7 +41,7 @@ class trabajosController extends ControladorBase{
                 $trabajo->setCategoria("{}");
             }
             $i=0;
-            $fotos="{";
+            $fotos="{ ";
             foreach($_FILES["files"]['tmp_name'] as $key => $tmp_name){
                 if($_FILES["files"]["name"][$key]) {
                     if ($_FILES['files']['type'][$key]=='image/png' || $_FILES['files']['type'][$key]=='image/jpeg'){
@@ -45,7 +50,7 @@ class trabajosController extends ControladorBase{
                         $directorio = 'fotos/'.$trabajo->getTitulo().date('ymdhis');
 
                         if(!file_exists($directorio)){
-                            mkdir($directorio, 0644) or die("No se puede crear el directorio de extracci&oacute;n");
+                            mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");
                         }
 
                         $dir=opendir($directorio);
@@ -65,7 +70,6 @@ class trabajosController extends ControladorBase{
             }
             $fotos=substr($fotos, 0, -1)."}";
             $trabajo->setFotos($fotos);
-
             $trabajo->save();
             $this->redirect("trabajos", "index");
         }
@@ -74,10 +78,10 @@ class trabajosController extends ControladorBase{
     public function borrar(){
         if(isset($_GET["id"])){
             $id=(int)$_GET["id"];
-            $usuario=new Usuario($this->adapter);
-            $usuario->deleteById($id);
+            $trabajo=new trabajos($this->adapter);
+            $trabajo->deleteById($id);
         }
-        $this->redirect("Usuarios", "index");
+        $this->redirect("trabajos", "index");
     }
 }
 ?>

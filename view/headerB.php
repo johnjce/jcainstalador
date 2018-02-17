@@ -114,25 +114,21 @@
                     </li>
                     <?php
                         $page = $_SERVER['REQUEST_URI'];
-                        $pag=preg_split('/=/',$page);
-                        $pag = $pag[2];
+                        $pag=explode('=',$page);
+                        $pag=explode('&',$pag[1]);
+                        $pag = $pag[0];
                     ?>
-                    <li <?php if($pag == "index") echo "class='selected'"; ?>>
+                    <li <?php if($pag == "back") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","index"); ?>"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                     </li>
                     <li <?php if($pag == "usuarios") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                     </li>
-                    <li>
-                        <a href=""><i class="fa fa-certificate fa-fw"></i>Nuevo<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
-                                <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i>Trabajo</a>
-                            </li>
-                            <li <?php if($pag == "categorias") echo "class='selected'"; ?>>
-                                <a href="<?php echo $helper->url("back","categorias"); ?>"><i class="fa fa-code-fork fa-fw"></i>Categoria</a>
-                            </li>
-                        </ul>
+                    <li <?php if($pag == "trabajos") echo "class='selected'"; ?>>
+                        <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i>Trabajos</a>
+                    </li>
+                    <li <?php if($pag == "categorias") echo "class='selected'"; ?>>
+                        <a href="<?php echo $helper->url("back","categorias"); ?>"><i class="fa fa-code-fork fa-fw"></i>Categorias</a>
                     </li>
 
 

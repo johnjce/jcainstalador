@@ -31,14 +31,14 @@
 
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> Borrar Usuarios
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Usuarios
                 </div>
 
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-striped">
+                                <table class="table table-striped table-bordered table-hover" id="usuarios">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -59,7 +59,9 @@
                                                 <td><?php echo $user->apellido; ?></td>
                                                 <td><?php echo $user->user; ?></td>
                                                 <td><?php echo $user->email; ?></td>
-                                                <td><a href="<?php echo $helper->url("usuarios","borrar"); ?>&id=<?php echo $user->id; ?>" class="btn btn-danger">Borrar</a></td>
+                                                <td>
+                                                    <a href="<?php echo $helper->url("usuarios","borrar"); ?>&id=<?php echo $user->id; ?>" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
+                                                </td>
                                             </tr>
 
                                         <?php } ?>

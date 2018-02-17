@@ -6,12 +6,6 @@ class ModeloBase extends EntidadBase{
     public function __construct($table, $adapter) {
         $this->table=(string) $table;
         parent::__construct($table, $adapter);
-
-        $this->fluent=$this->getConetar()->startFluent();
-    }
-
-    public function fluent(){
-        return $this->fluent;
     }
 
     public function ejecutarSql($query){

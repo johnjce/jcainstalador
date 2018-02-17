@@ -16,7 +16,16 @@
     <script src="./assets/back/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script>
         $(document).ready(function () {
-            $('#trabajos').dataTable();
+            $('#trabajos').dataTable( {
+			         "language": {
+                        "sUrl": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+			         }
+			       } );
+            $('#usuarios').dataTable( {
+			         "language": {
+                        "sUrl": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+			         }
+			       } );
         });
     </script>
     <script src="./assets/back/scripts/dashboard-demo.js"></script>
