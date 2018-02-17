@@ -22,7 +22,7 @@
                                 <input type="hidden" name="privilegio"  value="1" class="form-control"/>
                                 <input type="hidden" name="sesion" class="form-control" value="1"/>
                                 <label>Contraseña:</label> <input type="password" name="password" class="form-control"/><br/>
-                                <input type="submit" value="enviar" class="btn btn-success"/>
+                                <input type="submit" value="Guardar" class="btn btn-primary"/>
                             </form>
                         </div>
                     </div>

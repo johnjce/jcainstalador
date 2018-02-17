@@ -37,7 +37,7 @@
                     <label>Fotos:</label>
                     <input id="file" type="file" class="file" multiple=true  name="files[]"><br/>
 
-                    <input type="submit" value="enviar" class="btn btn-primary"/>
+                    <input type="submit" value="Guardar" class="btn btn-primary"/>
                 </form>
             </div>
         </div>
