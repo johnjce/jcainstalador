@@ -66,13 +66,16 @@
                                         $padre = new categoria($this->adapter);
                                     $i=0;
                                         foreach($allCategories as $categoria ){
-                                            if($categoria->id == 0) continue;
                                             $i++;
                                             echo "<tr>
                                                    <td>".$i."</td>
                                                    <td>".$categoria->categoria."</td>";
-                                            echo " <td>".$padre->getIdPadre($categoria->idPadre)."</td>
-                                                   <td>";
+                                            echo " <td>";
+                                            if($categoria->idPadre == 0)
+                                                echo "-";
+                                            else
+                                                echo $padre->getIdPadre($categoria->idPadre);
+                                            echo"</td><td>";
                                             echo '
                                                     <a href="'.$helper->url("categorias","borrar").'&id='.$categoria->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
                                                    </td>

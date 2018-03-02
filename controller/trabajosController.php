@@ -57,7 +57,7 @@ class trabajosController extends ControladorBase{
                         $target_path = $directorio.'/'.$filename;
 
                         if(move_uploaded_file($source, $target_path)) {
-                            $fotos.='"'.$i.'":"'.$directorio.'/'.$filename.'",';
+                            $fotos.='"n'.$i.'":"'.$directorio.'/'.$filename.'",';
                             $i++;
                         } else {
                             echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";

@@ -18,6 +18,21 @@ class IndexController extends ControladorBase{
         ));
     }
 
+    public function trabajos(){
+        $trabajo=new trabajos($this->adapter);
+        $allCategories=$trabajo->getAllCategories();
+        $trabajos = new trabajosModel($this->adapter);
+        $alljobs=$trabajos->getAllJobs();
+        $datos=new Index($this->adapter);
+        $allData=$datos->getAll();
+        $this->view("trabajosF",array(
+            "allJobs"=>$alljobs,
+            "allCategories"=>$allCategories,
+            "datos"=>$allData
+        ));
+    }
+
+
 
 }
 ?>
