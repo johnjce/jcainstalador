@@ -53,7 +53,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="<?php echo $helper->url("back","index"); ?>">
                     <img src="./assets/back/img/logo.png" alt="" />
                 </a>
             </div>
@@ -67,6 +67,7 @@
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
+                        <li><a href="<?php echo $helper->url("index","index"); ?>"><i class="fa fa-eye fa-fw"></i>Ver Web</a>
                         <li><a href="<?php echo $helper->url("login","logout"); ?>"><i class="fa fa-sign-out fa-fw"></i>Salir</a>
                         </li>
                     </ul>
