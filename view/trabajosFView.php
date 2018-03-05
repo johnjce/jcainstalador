@@ -16,7 +16,7 @@
                                 <div class='info'>$valor->descripcion</div>
                             </div>
                             <div class='content'>
-                                <img src='$fotos->n0'/>";
+                                <img src='$fotos->n0' class='col-left'/>";
                                 echo "<p><b>Categor&iacute;as:</b> ";
                                 $cat = json_decode($valor->categoria);
                                 foreach ($cat as $clave => $name) {
