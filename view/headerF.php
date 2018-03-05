@@ -64,9 +64,9 @@
 		<div id="logo"><a href="<?php echo $helper->url("index","index"); ?>"><img src="./assets/front/images/logo.png"/></a></div>
 		<nav>
 			<ul>
-				<li <?php if($_GET['action'] == "index") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","index"); ?>">Inicio</a></li>
-				<li <?php if($_GET['action'] == "trabajos") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","trabajos"); ?>">Trabajos</a></li>
-				<li <?php if($_GET['action'] == "contacto") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","contacto"); ?>">Contacto</a></li>
+				<li <?php if(!isset($_GET['action']) || (isset($_GET['action']) && $_GET['action'] == "index")) echo "class='current'"; ?>><a href="<?php echo $helper->url("index","index"); ?>">Inicio</a></li>
+				<li <?php if(isset($_GET['action']) && $_GET['action'] == "trabajos") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","trabajos"); ?>">Trabajos</a></li>
+				<li <?php if(isset($_GET['action']) && $_GET['action'] == "contacto") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","contacto"); ?>">Contacto</a></li>
 			</ul>
 		</nav>
 	</div>

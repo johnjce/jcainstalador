@@ -103,16 +103,16 @@
                         <!--end user image section-->
                     </li>
 
-                    <li <?php if($_GET['controller'] == "back") echo "class='selected'"; ?>>
+                    <li <?php if(isset($_GET['controller']) && $_GET['controller'] == "back") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","index"); ?>"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                     </li>
-                    <li <?php if($_GET['controller'] == "usuarios") echo "class='selected'"; ?>>
+                    <li <?php if(isset($_GET['controller']) && $_GET['controller'] == "usuarios") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","usuarios"); ?>"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                     </li>
-                    <li <?php if($_GET['controller'] == "trabajos") echo "class='selected'"; ?>>
+                    <li <?php if(isset($_GET['controller']) && $_GET['controller'] == "trabajos") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","trabajos"); ?>"><i class="fa fa-cogs fa-fw"></i>Trabajos</a>
                     </li>
-                    <li <?php if($_GET['controller'] == "categorias") echo "class='selected'"; ?>>
+                    <li <?php if(isset($_GET['controller']) && $_GET['controller'] == "categorias") echo "class='selected'"; ?>>
                         <a href="<?php echo $helper->url("back","categorias"); ?>"><i class="fa fa-code-fork fa-fw"></i>Categorias</a>
                     </li>
 
