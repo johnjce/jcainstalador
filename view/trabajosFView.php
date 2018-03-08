@@ -5,7 +5,6 @@
 	<div class="zerogrid">
 		<div class="row">
 			<div id="main-content" class="col-left">
-
                     <?php
                     foreach($allJobs as $valor ){
                         $fotos= json_decode($valor->fotos);
@@ -29,9 +28,6 @@
                         ";
                     }
                     ?>
-
-
-
 				<section>
 					<ul id="pagi">
 						<li><a class="current" href="#">1</a></li>

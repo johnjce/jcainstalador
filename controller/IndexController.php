@@ -32,6 +32,13 @@ class IndexController extends ControladorBase{
         ));
     }
 
+    public function contacto(){
+        $datos=new Index($this->adapter);
+        $allData=$datos->getAll();
+        $this->view("contacto",array(
+            "datos"=>$allData
+        ));
+    }
 
 
 }
