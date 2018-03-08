@@ -9,9 +9,17 @@
 	<meta name="description" content="<?php echo $datos[0]->description; ?>">
 	<meta name="author" content="johnjce.github.io/inicio/">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <link rel="stylesheet" href="./assets/back/plugins/bootstrap/bootstrap.css"/>
 	<link rel="stylesheet" href="./assets/front/css/style.css">
     <link rel="stylesheet" href="./assets/front/css/responsive.css">
 	<link rel='stylesheet' href="./assets/front/css/camera.css">
+
 
 	<!--[if lt IE 8]>
        <div style=' clear: both; text-align:center; position: relative;'>
@@ -27,10 +35,13 @@
 
 	<link href='./assets/front/images/favicon.ico' rel='icon' type='image/x-icon'/>
 
+
+    <script src="./assets/back/plugins/jquery-1.10.2.js"></script>
+    <script src="./assets/back/plugins/bootstrap/bootstrap.min.js"></script>
+
 	<script type='text/javascript' src='./assets/front/js/jquery.min.js'></script>
 	<script type='text/javascript' src='./assets/front/js/jquery.easing.1.3.js'></script>
     <script type='text/javascript' src='./assets/front/js/camera.min.js'></script>
-
     <script>
 		jQuery(function(){
 			jQuery('#camera_wrap').camera({
@@ -47,27 +58,31 @@
 <!--------------Header--------------->
 
 <header>
-	<div class="pagetop">
-		<div class="wrap-pagetop">
-			<div class="shareicons">
-				<ul>
-					<li><a href="#"><img src="./assets/front/images/facebook-icon.png" title="Facebook"/></a></li>
-					<li><a href="#"><img src="./assets/front/images/google-icon.png" title="Google+"/></a></li>
-					<li><a href="#"><img src="./assets/front/images/twitter-icon.png" title="Twitter"/></a></li>
-					<li><a href="#"><img src="./assets/front/images/sharethis-icon.png" title="Sharethis"/></a></li>
-					<li><a href="#"><img src="./assets/front/images/linkedin-icon.png" title="Linkedin"/></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="wrap-header">
-		<div id="logo"><a href="<?php echo $helper->url("index","index"); ?>"><img src="./assets/front/images/logo.png"/></a></div>
-		<nav>
-			<ul>
-				<li <?php if(!isset($_GET['action']) || (isset($_GET['action']) && $_GET['action'] == "index")) echo "class='current'"; ?>><a href="<?php echo $helper->url("index","index"); ?>">Inicio</a></li>
-				<li <?php if(isset($_GET['action']) && $_GET['action'] == "trabajos") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","trabajos"); ?>">Trabajos</a></li>
-				<li <?php if(isset($_GET['action']) && $_GET['action'] == "contacto") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","contacto"); ?>">Contacto</a></li>
-			</ul>
-		</nav>
-	</div>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-fixed-top headerbg">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="<?php echo $helper->url("index","index"); ?>">
+                        <img src="./assets/front/images/logo.png" alt="" />
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right menus">
+                        <li <?php if(!isset($_GET['action']) || (isset($_GET['action']) && $_GET['action'] == "index")) echo "class='current'"; ?>><a href="<?php echo $helper->url("index","index"); ?>">Inicio</a></li>
+                        <li <?php if(isset($_GET['action']) && $_GET['action'] == "trabajos") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","trabajos"); ?>">Trabajos</a></li>
+                        <li <?php if(isset($_GET['action']) && $_GET['action'] == "contacto") echo "class='current'"; ?>><a href="<?php echo $helper->url("index","contacto"); ?>">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
 </header>
+
