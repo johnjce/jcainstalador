@@ -6,13 +6,13 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Si desea contactar con nosotros lo puedes hacer mendiante el siguiente formulario de contacto, o bien llamando a
-                    <br/>+34 616 236 722  - +34 696 236 722
+                    <h1>Si desea contactar con nosotros lo puedes hacer mendiante el siguiente formulario de contacto, o bien llamando a</h1>
+                    <h2>+34 616 236 722  - +34 696 236 722</h2>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <form role="form">
+                            <form role="form" action="<?php echo $helper->url("index","contactoEnviar"); ?>" method="post">
                                 <div class="form-group">
                                     <label> Nombre *</label>
                                     <input type="text" name="nombre" id="nombre" class="form-control">
