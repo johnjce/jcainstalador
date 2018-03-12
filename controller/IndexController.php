@@ -17,12 +17,22 @@ class IndexController extends ControladorBase{
     }
 
     public function trabajos(){
+        $page = 1;
+        if(isset($_GET['page'])) $page=$_GET['page'];
         $trabajos = new trabajosModel($this->adapter);
-        $alljobs=$trabajos->getAllJobs();
+        if(isset($_GET['category'])) {
+            $numberRows = $trabajos->getAllJobs(null,$_GET['category']);
+            $alljobs = $trabajos->getAllJobs($page, $_GET['category']);
+        }else{
+            $numberRows = $trabajos->getAllJobs();
+            $alljobs = $trabajos->getAllJobs($page);
+        }
+
         $this->view("trabajosF",array(
-            "allJobs"=>$alljobs,
             "allCategories"=>$this->getAllCategories(),
-            "datos"=>$this->getAllData()
+            "allJobs"=>$alljobs,
+            "datos"=>$this->getAllData(),
+            "numberRows"=>$numberRows
         ));
     }
 

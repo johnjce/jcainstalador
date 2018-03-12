@@ -11,12 +11,13 @@
                         echo "
                         <article>
                             <div class='heading'>
-                                <h2><a href='single.html'>$valor->titulo</a></h2>
-                                <div class='info'>$valor->descripcion</div>
+                                <h2><a href='";
+                                echo $helper->url('index','trabajo')."&trabajo=$valor->id'>$valor->titulo</a></h2>
+                                <div class='info'><p>$valor->descripcion</p></div>
                             </div>
                             <div class='content'>
                                 <img src='$fotos->n0' class='col-left'/>";
-                                echo "<p><b>Categor&iacute;as:</b>";
+                                echo "<p><b>Categor&iacute;as: </b>";
                                 $cat = json_decode($valor->categoria);
                                 foreach ($cat as $clave => $name) {
                                     echo $name.". ";
@@ -28,16 +29,8 @@
                         </article>
                         ";
                     }
+                    include("./view/paginationJobs.php");
                     ?>
-				<section>
-					<ul id="pagi">
-						<li><a class="current" href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">next</a></li>
-					</ul>
-				</section>
 			</div>
 			<?php include("./view/categories.php"); ?>
 		</div>

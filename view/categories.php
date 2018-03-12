@@ -6,7 +6,7 @@
                 <?php
                 foreach($allCategories as $row ){
                     if($row->idPadre!=0) $etiq="->"; else $etiq ="";
-                    echo "<li><a href='category?=$row->id'>$etiq $row->categoria</a></li>\n";
+                    echo "<li><a href='index.php?controller=index&action=trabajos&category=$row->id'>$etiq $row->categoria</a></li>\n";
                 }
                 ?>
             </ul>
