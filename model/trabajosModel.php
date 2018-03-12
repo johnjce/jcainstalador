@@ -14,5 +14,9 @@ class trabajosModel extends ModeloBase{
         $query=$this->ejecutarSql("SELECT * FROM trabajos ORDER BY id DESC");
         return $query;
     }
+
+    public function getJob($idJob){
+        return $this->getById($idJob);
+    }
 }
 ?>

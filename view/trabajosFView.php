@@ -16,13 +16,14 @@
                             </div>
                             <div class='content'>
                                 <img src='$fotos->n0' class='col-left'/>";
-                                echo "<p><b>Categor&iacute;as:</b> ";
+                                echo "<p><b>Categor&iacute;as:</b>";
                                 $cat = json_decode($valor->categoria);
                                 foreach ($cat as $clave => $name) {
                                     echo $name.". ";
                                 }
                                 echo "</p>
-                                <p class='more'><a class='button' href='single.html'>Ver Trabajo</a></p>
+                                <p class='more'><a class='button' href='";
+                                echo $helper->url('index','trabajo')."&trabajo=$valor->id'>Ver Trabajo</a></p>
                             </div>
                         </article>
                         ";
@@ -38,21 +39,7 @@
 					</ul>
 				</section>
 			</div>
-			<div id="sidebar" class="col-right">
-				<section>
-					<div class="heading"><h2>Categor&iacute;as</h2></div>
-					<div class="content">
-						<ul>
-                            <?php
-                            foreach($allCategories as $row ){
-                                if($row->idPadre!=0) $etiq="->"; else $etiq ="";
-                                echo "<li><a href='category?=$row->id'>$etiq $row->categoria</a></li>\n";
-                            }
-                            ?>
-						</ul>
-					</div>
-				</section>
-			</div>
+			<?php include("./view/categories.php"); ?>
 		</div>
 	</div>
 </section>
