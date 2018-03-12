@@ -1,6 +1,6 @@
 <div id="sidebar" class="col-right">
     <section>
-        <div class="heading"><h2>Categor&iacute;as</h2></div>
+        <div class="heading"><h2>Ver por categor&iacute;as</h2></div>
         <div class="content">
             <ul>
                 <?php

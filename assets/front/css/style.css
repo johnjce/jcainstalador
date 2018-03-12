@@ -183,3 +183,6 @@ footer .copyright a:hover{color:#CCCCCC; text-decoration:none;}
     padding-right: 35px;
     background-color: #fff;
 }
+.panel-heading h1 {
+    font-size: 18px;
+}

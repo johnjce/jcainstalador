@@ -5,7 +5,8 @@
 	<div class="zerogrid">
 		<div class="row">
 			<div id="main-content" class="col-left">
-                    <?php
+                <?php
+                if($allJobs!=1){
                     foreach($allJobs as $valor ){
                         $fotos= json_decode($valor->fotos);
                         echo "
@@ -29,8 +30,17 @@
                         </article>
                         ";
                     }
-                    include("./view/paginationJobs.php");
-                    ?>
+                }else{
+                    echo "<article>
+                            <div class='heading'>
+                                <h2><a href='";
+                                echo $helper->url('index','trabajos')."'>Sin Trabajo</a></h2>
+                                <div class='info'><p>No existen trabajos que mostrar</p></div>
+                            </div>
+                        </article>";
+                }
+                include("./view/paginationJobs.php");
+                ?>
 			</div>
 			<?php include("./view/categories.php"); ?>
 		</div>
