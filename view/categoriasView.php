@@ -25,6 +25,7 @@
                     <label>Categor&iacute;a padre:</label>
                     <select class="form-control" name="idPadre">
                         <?php
+                            echo "<option value='0'>-</option>\n";
                             foreach($allCategories as $row ){
                                 if($row->idPadre!=0) continue;
                                 echo "<option value='$row->id'>$row->categoria</option>\n";
@@ -64,22 +65,24 @@
                                 <tbody>
                                     <?php
                                         $padre = new categoria($this->adapter);
-                                    $i=0;
-                                        foreach($allCategories as $categoria ){
-                                            $i++;
-                                            echo "<tr>
-                                                   <td>".$i."</td>
-                                                   <td>".$categoria->categoria."</td>";
-                                            echo " <td>";
-                                            if($categoria->idPadre == 0)
-                                                echo "-";
-                                            else
-                                                echo $padre->getIdPadre($categoria->idPadre);
-                                            echo"</td><td>";
-                                            echo '
-                                                    <a href="'.$helper->url("categorias","borrar").'&id='.$categoria->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
-                                                   </td>
-                                                  </tr>';
+                                        $i=0;
+                                        if(is_array($allCategories)){
+                                            foreach($allCategories as $categoria ){
+                                                $i++;
+                                                echo "<tr>
+                                                       <td>".$i."</td>
+                                                       <td>".$categoria->categoria."</td>";
+                                                echo " <td>";
+                                                if($categoria->idPadre == 0)
+                                                    echo "-";
+                                                else
+                                                    echo $padre->getIdPadre($categoria->idPadre);
+                                                echo"</td><td>";
+                                                echo '
+                                                        <a href="'.$helper->url("categorias","borrar").'&id='.$categoria->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
+                                                       </td>
+                                                      </tr>';
+                                            }
                                         }
                                     ?>
                                 </tbody>

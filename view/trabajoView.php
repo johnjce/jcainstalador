@@ -6,7 +6,7 @@
 		<div class="row">
 			<div id="main-content" class="col-left">
                 <?php
-                    $fotos= json_decode($job->fotos);
+
                     echo "
                     <article>
                         <div class='heading'>
@@ -14,11 +14,14 @@
                             <div class='info'><p>$job->descripcion</p></div>
                         </div>
                         <div class='content'>";
+                            if($valor->directorio != "no"){
+                                $fotos= json_decode($job->fotos);
 
-                            foreach ($fotos as $id => $foto) {
-                                echo "<img src='$foto' class='col-left'/>";
-                            }
-
+                                foreach ($fotos as $id => $foto) {
+                                    echo "<img src='$foto' class='col-left'/>";
+                                }
+                            }else
+                            echo "<img src='./fotos/sinfoto.jpg' class='col-left'/>";
                             echo "<p><b>Categor&iacute;as: </b>";
                             $cat = json_decode($valor->categoria);
                             foreach ($cat as $clave => $name) {

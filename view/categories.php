@@ -4,9 +4,11 @@
         <div class="content">
             <ul>
                 <?php
-                foreach($allCategories as $row ){
-                    if($row->idPadre!=0) $etiq="->"; else $etiq ="";
-                    echo "<li><a href='index.php?controller=index&action=trabajos&category=$row->id'>$etiq $row->categoria</a></li>\n";
+                if(is_array($allCategories)){
+                    foreach($allCategories as $row ){
+                        if($row->idPadre!=0) $etiq="->"; else $etiq ="";
+                        echo "<li><a href='index.php?controller=index&action=trabajos&category=$row->id'>$etiq $row->categoria</a></li>\n";
+                    }
                 }
                 ?>
             </ul>
