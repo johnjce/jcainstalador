@@ -69,20 +69,22 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                        foreach($allJobs as $valor ){
-                                           echo "<tr>
-                                                  <td>".$valor->titulo."</td>
-                                                  <td>".$valor->descripcion."</td>
-                                                  <td>";
-                                            $cat = json_decode($valor->categoria);
-                                            foreach ($cat as $clave => $name) {
-                                                echo $name.". ";
+                                        if(is_array($allJobs)){
+                                            foreach($allJobs as $valor ){
+                                               echo "<tr>
+                                                      <td>".$valor->titulo."</td>
+                                                      <td>".$valor->descripcion."</td>
+                                                      <td>";
+                                                $cat = json_decode($valor->categoria);
+                                                foreach ($cat as $clave => $name) {
+                                                    echo $name.". ";
+                                                }
+                                                echo ' </td>
+                                                       <td>
+                                                        <a href="'.$helper->url("trabajos","borrar").'&id='.$valor->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
+                                                       </td>
+                                                      </tr>';
                                             }
-                                            echo ' </td>
-                                                   <td>
-                                                    <a href="'.$helper->url("trabajos","borrar").'&id='.$valor->id.'" class="btn btn-danger btn-circle"><i class="fa fa-times"></i> </a>
-                                                   </td>
-                                                  </tr>';
                                         }
                                     ?>
                                 </tbody>

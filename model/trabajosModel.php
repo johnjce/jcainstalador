@@ -18,7 +18,7 @@ class trabajosModel extends ModeloBase{
         if($page != null){
             $sql = "SELECT * FROM trabajos ". $cond ." ORDER BY id DESC LIMIT ". (($page*4)-4) ." , ". ($page*4);
         }else{
-            $sql = "SELECT count(*) as nf FROM trabajos  ". $cond ;
+            $sql = "SELECT * FROM trabajos  ". $cond ;
         }
         //echo $sql;
        // break;

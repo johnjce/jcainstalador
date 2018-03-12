@@ -41,6 +41,7 @@ class trabajosController extends ControladorBase{
                 $trabajo->setCategoria("{}");
             }
             $i=0;
+            $directorio ="no";
             $fotos="{ ";
             foreach($_FILES["files"]['tmp_name'] as $key => $tmp_name){
                 if($_FILES["files"]["name"][$key]) {
@@ -70,6 +71,7 @@ class trabajosController extends ControladorBase{
             }
             $fotos=substr($fotos, 0, -1)."}";
             $trabajo->setFotos($fotos);
+            $trabajo->setDirectorio($directorio);
             $trabajo->save();
             $this->redirect("trabajos", "index");
         }
@@ -77,11 +79,37 @@ class trabajosController extends ControladorBase{
 
     public function borrar(){
         if(isset($_GET["id"])){
+            if($this->getDir($_GET["id"])!="no")
+                $this->removeDirectory($this->getDir($_GET["id"]));
             $id=(int)$_GET["id"];
             $trabajo=new trabajos($this->adapter);
             $trabajo->deleteById($id);
         }
         $this->redirect("trabajos", "index");
+    }
+
+    public function getDir($id){
+        $trabajo=new trabajos($this->adapter);
+        return $trabajo->getDirectorio($id);
+    }
+
+    function removeDirectory($path){
+        $path = rtrim(strval($path), '/');
+        $d = dir($path);
+        if(!$d)
+            return false;
+        while (false !== ($current = $d->read())){
+            if($current === '.' || $current === '..')
+                continue;
+            $file = $d->path.'/'.$current;
+            if(is_dir($file))
+                removeDirectory($file);
+            if(is_file($file))
+                unlink($file);
+        }
+        rmdir($d->path);
+        $d->close();
+        return true;
     }
 }
 ?>
