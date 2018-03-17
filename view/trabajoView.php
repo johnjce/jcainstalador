@@ -34,7 +34,7 @@
                 ?>
 			</div>
 			<?php include("./view/categories.php"); ?>
-            <div style="position: fixed;right: 20px; bottom:20px;">
+            <div style="position: fixed;left: 20px; top:90px;">
                 <p class='more'>
                     <a class='button' href='<?php echo $helper->url('index','trabajos'); ?>'>Volver</a>
                 </p>
