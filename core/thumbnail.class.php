@@ -3,7 +3,7 @@
         var $image;
         var $size_x;
         var $size_y;
-        function thumbnail($url) {$this->image=$url;}
+        function __construct($url) {$this->image=$url;}
         function size($size_x,$size_y) {$this->size_x=$size_x;$this->size_y=$size_y;}
         function show() {
             header("Content-type: image/jpeg");
@@ -18,7 +18,7 @@
             $resize_y=$this->size_y/$y;
             if($resize_x<$resize_y) $resize=$resize_x;
             else $resize=$resize_y;
-            $im    = imagecreatetruecolor(ceil($x*$resize),ceil($y*$resize));
+            $im  = imagecreatetruecolor(ceil($x*$resize),ceil($y*$resize));
             imagecopyresampled($im,$original_image,0,0,0,0,ceil($x*$resize),ceil($y*$resize),$x,$y);
               imagejpeg($im, NULL, 100);
                imagedestroy($im);
